@@ -1,5 +1,44 @@
 <!DOCTYPE html>
 <html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>動く時計</title>
+    <script>
+        function updateClock() {
+            // 現在時刻を取得
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+            
+            // 1桁の場合は0を付ける
+            if (hours < 10) hours = '0' + hours;
+            if (minutes < 10) minutes = '0' + minutes;
+            if (seconds < 10) seconds = '0' + seconds;
+            
+            // 時刻を表示
+            var timeString = hours + ':' + minutes + ':' + seconds;
+            document.getElementById('clock').innerHTML = timeString;
+        }
+        
+        // 1秒ごとにupdateClock関数を実行
+        setInterval(updateClock, 1000);
+        
+        // ページ読み込み時に即座に表示
+        window.onload = updateClock;
+    </script>
+</head>
+<body>
+    <h1>現在時刻</h1>
+    <div id="clock" style="font-size: 48px; font-weight: bold; color: blue;">
+        00:00:00
+    </div>
+    
+    <!-- ここに既存のコンテンツを配置 -->
+</body>
+
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,17 +49,15 @@
     <h1>🌐 Phase 0-1: HTML基礎確認</h1>
     <div>
         <h2>📝 課題1: 自己紹介セクション作成</h2>
-        <p><strong>指示:</strong> 下記のHTMLコメント部分に、あなたの自己紹介を書いてください。</p>
         <h3>自己紹介</h3>
         <p>名前: 森尾悠央</p>
         <p>職業: 大学生</p>
         <p>趣味: サッカー観戦、散歩</p>
-        <p>✅ 完了したら、この課題は終了です</p>
     </div>
     
     <div>
         <h2>📋 課題2: リスト作成</h2>
-        <p><strong>指示:</strong> 好きな食べ物を5つ、番号付きリスト（ol）で作成してください。</p>
+        <h3>好きな食べ物</h3>
         <ol>
           <li>麻婆豆腐</li>
           <li>ラーメン</li>
@@ -32,10 +69,9 @@
     
     <div>
         <h2>🔗 課題3: リンク作成</h2>
-        <p><strong>指示:</strong> 以下のリンクを作成してください：</p>
         <ul>
             <li><a href="https://www.google.com/">Google</a></li>
-            <li><a href="https://https://github.co.jp/" target="_blank"></a>GitHub（新しいタブで開く）</li>
+            <li><a href="https://https://github.co.jp/" target="_blank">GitHub（新しいタブで開く）</a></li>
         </ul>
         <a href="second.html">美ヶ原高原の紹介へ</a>
     </div>
