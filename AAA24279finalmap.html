@@ -120,8 +120,8 @@
                     map.fitBounds(selected_area.getBounds());
             });
 
-            // 27000_2.geojson を表示
-            fetch("./27000_2.geojson")
+            // 大阪府堺市の指定緊急避難場所を表示
+            fetch("./27140_2..geojson")
             .then(res => res.json())
             .then(data => {
               L.geoJSON(data)
